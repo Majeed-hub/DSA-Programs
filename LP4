@@ -1,0 +1,21 @@
+LP4.WRITE A PROGRAM TO SWAP TWO NUMBERS USING POINTERS
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int a,b;
+    void swap(int *,int *);
+    printf("\n ENTER ANY TWO NUMBERS - ");
+    scanf("%d %d",&a,&b);
+    printf("\n BEFORE SWAPPING, a=%d    b=%d",a,b);
+    swap(&a,&b);
+    printf("\n AFTER SWAPPING, a=%d    b=%d",a,b);
+}
+void swap(int *x,int *y)
+{
+    int temp;
+    temp=*x;
+    *x=*y;
+    *y=temp;
+}

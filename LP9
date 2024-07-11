@@ -1,0 +1,37 @@
+LP9.WRITE A PROGRAM TO SORT AN ARRAY USING INSERTION SORT TECHNIQUE.
+
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int arr[50],i,n;
+    void ins_sort (int[],int);
+     printf("\n ENTER THE SIZE OF THE ARRAY :");
+    scanf("%d",&n);
+    printf("\n ENTER %d ELEMENTS TO ARRAY :",n);
+    for(i=0;i<n;i++)
+        scanf("%d",&arr[i]);
+    printf("\n BEFORE SORTING ELEMENTS ARE : ");
+    for(i=0;i<n;i++)
+        printf("%d",arr[i]);
+    ins_sort(arr,n);
+     printf("\n AFTER SORTING ELEMENTS ARE : ");
+     for(i=0;i<n;i++)
+        printf("%d",arr[i]);
+     getch();
+}
+void ins_sort(int arr[],int n)
+{
+    int i,j,key;
+    for(i=1;i<n;i++)
+    {
+        key=arr[i];
+        j=j-1;
+        while(j>=0 && arr[j]>key)
+        {
+            arr[j+1]=arr[j];
+            j=j-1;
+        }
+        arr[j+1]=key;
+    }
+}

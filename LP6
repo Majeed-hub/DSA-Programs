@@ -1,0 +1,43 @@
+LP6.WRITE A PROGRAM TO SEDARCH A NUMBER WITHIN AN ARRAY USING LINEAR SEARCH METHOD.
+
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+void main()
+{
+    int arr[30], n, i, pos, key;
+    int lsearch(int[], int, int);
+    printf("\n Enter number of elements: ");
+    scanf("%d", &n);
+    printf("\n Enter %d  values: ", n);
+
+    for (i=0;i<n;i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    printf("\n Enter number to search: ");
+    scanf("%d", &key);
+    pos = lsearch(arr,key,n);
+    if(pos==-1)
+    {
+        printf("\n Search no: %d, Not Found", key);
+    }
+    else
+    {
+        printf("\n Search no: %d, Found at index %d", key, pos);
+    }
+    getch();
+}
+int lsearch(int Arr[], int Key, int n)
+{
+    int pos=-1,i;
+    for(i=0;i<n;i++)
+    {
+        if(Arr[i]==Key)
+        {
+            pos=i;
+            break;
+        }
+    }
+    return pos;
+}
